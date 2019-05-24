@@ -30,6 +30,8 @@ submit.on('click',function() {
 // YAYAY! but now it's case sensitive.... ): and they have to know state initials
 // I would now have the input be able to understand entire state entries 
     console.log(filtered);
+    // if inpvalue = ``
+        
     tbody.html(function() {
         return ``;
     });
