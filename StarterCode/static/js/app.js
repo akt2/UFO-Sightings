@@ -20,9 +20,17 @@ submit.on('click',function() {
     d3.event.preventDefault();
     var input=d3.select('#datetime');
     var inpvalue=input.property('value');
-    var filtered=tableData.filter(tableData => tableData.datetime === inpvalue);
+    var filtered=tableData.filter(tableData => tableData.datetime === inpvalue 
+        || tableData.city === inpvalue 
+        || tableData.state === inpvalue 
+        || tableData.country === inpvalue 
+        || tableData.shape === inpvalue 
+        || tableData.durationMinutes === inpvalue 
+        || tableData.comments === inpvalue);
+// YAYAY! but now it's case sensitive.... ): and they have to know state initials
+// I would now have the input be able to understand entire state entries 
     console.log(filtered);
-    tbody.html(function(x) {
+    tbody.html(function() {
         return ``;
     });
     filtered.forEach(function(ufoSight) {
