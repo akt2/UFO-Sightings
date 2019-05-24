@@ -22,4 +22,16 @@ submit.on('click',function() {
     var inpvalue=input.property('value');
     var filtered=tableData.filter(tableData => tableData.datetime === inpvalue);
     console.log(filtered);
+    tbody.html(function(x) {
+        return ``;
+    });
+    filtered.forEach(function(ufoSight) {
+        var row=tbody.append('tr');
+        Object.entries(ufoSight).forEach(function([key,value]) {
+            var cell=row.append('td')
+            cell.text(value);
+        })
+    })
 });
+
+// THANK YOU JASVIR!!!! yaaaayyyyy
